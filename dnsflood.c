@@ -204,7 +204,75 @@ int make_question_packet(char *data, char *name, int type)
 	}
        
 */
-
+        if (type == TYPE_NS) {
+		nameformat(name, data);
+		*((u_short *) (data + strlen(data) + 1)) = htons(TYPE_NS);
+	}
+	if (type == TYPE_MD) {
+		nameformat(name, data);
+		*((u_short *) (data + strlen(data) + 1)) = htons(TYPE_MD);
+	}
+        if (type == TYPE_MF) {
+		nameformat(name, data);
+		*((u_short *) (data + strlen(data) + 1)) = htons(TYPE_MF);
+	}
+	if (type == TYPE_CNAME) {
+		nameformat(name, data);
+		*((u_short *) (data + strlen(data) + 1)) = htons(TYPE_CNAME);
+	}
+	if (type == TYPE_SOA) {
+		nameformat(name, data);
+		*((u_short *) (data + strlen(data) + 1)) = htons(TYPE_SOA);
+	}
+	if (type == TYPE_MB) {
+		nameformat(name, data);
+		*((u_short *) (data + strlen(data) + 1)) = htons(TYPE_MB);
+	}
+	if (type == TYPE_MG) {
+		nameformat(name, data);
+		*((u_short *) (data + strlen(data) + 1)) = htons(TYPE_MG);
+	}
+	if (type == TYPE_MR) {
+		nameformat(name, data);
+		*((u_short *) (data + strlen(data) + 1)) = htons(TYPE_MR);
+	}
+	if (type == TYPE_NULL) {
+		nameformat(name, data);
+		*((u_short *) (data + strlen(data) + 1)) = htons(TYPE_NULL);
+	}
+	if (type == TYPE_WKS) {
+		nameformat(name, data);
+		*((u_short *) (data + strlen(data) + 1)) = htons(TYPE_WKS);
+	}
+	if (type == TYPE_WKS) {
+		nameformat(name, data);
+		*((u_short *) (data + strlen(data) + 1)) = htons(TYPE_WKS);
+	}
+	if (type == TYPE_PTR) {
+		nameformat(name, data);
+		*((u_short *) (data + strlen(data) + 1)) = htons(TYPE_PTR);
+	}
+	if (type == TYPE_HINFO) {
+		nameformat(name, data);
+		*((u_short *) (data + strlen(data) + 1)) = htons(TYPE_HINFO);
+	}
+	if (type == TYPE_MINFO) {
+		nameformat(name, data);
+		*((u_short *) (data + strlen(data) + 1)) = htons(TYPE_MINFO);
+	}
+	if (type == TYPE_MX) {
+		nameformat(name, data);
+		*((u_short *) (data + strlen(data) + 1)) = htons(TYPE_MX);
+	}
+	if (type == TYPE_TXT) {
+		nameformat(name, data);
+		*((u_short *) (data + strlen(data) + 1)) = htons(TYPE_TXT);
+	}
+	if (type == TYPE_AAAA) {
+		nameformat(name, data);
+		*((u_short *) (data + strlen(data) + 1)) = htons(TYPE_AAAA);
+	}	
+	
 	*((u_short *) (data + strlen(data) + 3)) = htons(CLASS_INET);
 
 	return (strlen(data) + 5);
