@@ -465,7 +465,7 @@ int main(int argc, char **argv)
 		}
 
 		dns_header->id = random();
-		dns_datalen = make_question_packet(dns_data, qname, TYPE_A);
+		dns_datalen = make_question_packet(dns_data, qname, qtype);
 
 		udp_datalen = sizeof(struct dnshdr) + dns_datalen;
 		ip_datalen = sizeof(struct udphdr) + udp_datalen;
